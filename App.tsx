@@ -1,10 +1,17 @@
+import { NunitoSans_400Regular, NunitoSans_700Bold, useFonts } from '@expo-google-fonts/nunito-sans';
+import { HomeScreen } from '@screens/Home';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    NunitoSans_400Regular, 
+    NunitoSans_700Bold
+  })
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      {fontsLoaded ? ( <HomeScreen /> ): ( <ActivityIndicator color='#000' size='large'/> )}
+      
       <StatusBar style="auto" />
     </View>
   );
