@@ -14,6 +14,7 @@ type TypographyProps = TextProps & TypographyStyles
 
 export const Typography = ({ ...props }: TypographyProps) => {
     return (
+        //@ts-ignore
         <Container {...props}>
             {props.children}
         </Container>

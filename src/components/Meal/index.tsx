@@ -14,6 +14,7 @@ type MealProps = PressableProps & MealStatus & {
 
 export const Meal = ({ ...props }: MealProps) => {
     return (
+        //@ts-ignore
         <Container { ...props }>
             <Typography fontSize="body_xs" family="bold">
                 {props.hour}
