@@ -24,8 +24,8 @@ type CardProps = ViewProps & CardColors & TextSize & ButtonFloatProps & {
 
 export const Card = ({ showIconButton = true, iconPosition = 'right', titleFontSize = 'title_lg', bg = 'gray', ...props }: CardProps) => {
     return (
-        <Container bg={bg}>
-            {showIconButton && iconPosition  === 'left' ? (
+        <Container bg={bg} {...props}>
+            {showIconButton && ( iconPosition  === 'left' ? (
                 <ButtonToStaticLeft onPress={props.onPress}>
                     <IconArrowLeft bg={bg} />
                 </ButtonToStaticLeft>
@@ -33,7 +33,7 @@ export const Card = ({ showIconButton = true, iconPosition = 'right', titleFontS
                 <ButtonToStaticRight onPress={props.onPress}>
                     <IconArrowUpRight bg={bg} />
                 </ButtonToStaticRight>
-            )}
+            ))}
             
             <Typography
                 fontSize={titleFontSize}

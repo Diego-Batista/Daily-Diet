@@ -14,7 +14,6 @@ export type ButonProps = TouchableOpacityProps & ButtonType & {
 
 export const Button = ({ type = 'solid', isActive = true, ...props }: ButonProps) => {
     return (
-        //@ts-ignore
         <Container isActive={isActive} type={type} disabled={isActive ? false : true} { ...props }>
             {props.icon && props.icon}
 
